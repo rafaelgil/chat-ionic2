@@ -10,6 +10,8 @@ import { MyApp } from './app.component';
 import { ChatPage } from "../pages/chat/chat";
 import { RegistroPage } from "../pages/registro/registro";
 import { SigninPage } from "../pages/signin/signin";
+import { FormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 
 export const firebaseConfig={
     apiKey: "AIzaSyAIMe6thKy7CzoXapFpXNavC2Nfz7UpZTA",

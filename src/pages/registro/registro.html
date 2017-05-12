@@ -7,19 +7,42 @@
 </ion-header>
 
 <ion-content padding>
-  <form #f="ngForm" (ngSubmit)="registra(f)">
+  <form [formGroup]="registroForm" (ngSubmit)="registra()">
     <ion-list>
       <ion-item>
-        <ion-label fixed>Email</ion-label>
-        <ion-input type="email" ngModel name="email" required email></ion-input>
+        <ion-label>Usuário</ion-label>
+        <ion-input type="text" formControlName="usuario"></ion-input>
       </ion-item>
+      <small [hidden]="registroForm.controls.usuario.length == 0 || registroForm.controls.usuario.valid || (registroForm.controls.usuario.pristine && !registroForm.submitted)">
+          Usuário inválido!
+      </small>
+
+      <ion-item>
+        <ion-label fixed>Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <small [hidden]="registroForm.controls.email.length == 0 || registroForm.controls.email.valid || (registroForm.controls.email.pristine && !registroForm.submitted)">
+          Email inválido!
+      </small>
+      
       <ion-item>
         <ion-label fixed>Senha</ion-label>
-        <ion-input type="password" ngModel name="senha" 
-        required [minlength]="6"></ion-input>
+        <ion-input type="password" formControlName="senha"></ion-input>
       </ion-item>
+      <small [hidden]="registroForm.controls.senha.length == 0 || registroForm.controls.senha.valid || (registroForm.controls.senha.pristine && !registroForm.submitted)">
+          Senha inválida!
+      </small>
+
+      <ion-item>
+        <ion-label>Confirmação Senha</ion-label>
+        <ion-input type="password" formControlName="confirmacaoSenha"></ion-input>
+      </ion-item>
+      <small [hidden]="registroForm.controls.confirmacaoSenha.length == 0 || registroForm.controls.confirmacaoSenha.valid || (registroForm.controls.confirmacaoSenha.pristine && !registroForm.submitted)">
+          Confirmação de senha inválida!
+      </small>
+      
     </ion-list>
-    <button ion-button block type="submit" [disabled]="!f.valid">Enviar</button>
+    <button ion-button block type="submit" [disabled]="!registroForm.valid">Enviar</button>
   </form>
 </ion-content>
 
