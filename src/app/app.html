@@ -10,6 +10,10 @@
                 <ion-icon name="chat"></ion-icon>
                 Chat
             </button>
+            <button ion-item ion-left (click)="carrega(historicoPage)" *ngIf="isAuthenticated">
+                <ion-icon name="historico"></ion-icon>
+                Histórico
+            </button>
             <button ion-item ion-left (click)="carrega(signinPage)" *ngIf="!isAuthenticated">
                 <ion-icon name="log-in"></ion-icon>
                 Signin

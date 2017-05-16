@@ -1,3 +1,5 @@
+import { HistoricoDetalhesPage } from './../pages/historico-detalhes/historico-detalhes';
+import { HistoricoPage } from './../pages/historico/historico';
 import { UsuarioService } from './../services/usuario.service';
 import { AngularFireModule } from 'angularfire2';
 import { AutenticacaoService } from './../services/autenticacao.service';
@@ -10,8 +12,6 @@ import { MyApp } from './app.component';
 import { ChatPage } from "../pages/chat/chat";
 import { RegistroPage } from "../pages/registro/registro";
 import { SigninPage } from "../pages/signin/signin";
-import { FormsModule } from "@angular/forms";
-import { CommonModule } from "@angular/common";
 
 export const firebaseConfig={
     apiKey: "AIzaSyAIMe6thKy7CzoXapFpXNavC2Nfz7UpZTA",
@@ -27,7 +27,9 @@ export const firebaseConfig={
     MyApp,
     ChatPage,
     RegistroPage,
-    SigninPage
+    SigninPage,
+    HistoricoPage,
+    HistoricoDetalhesPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,9 @@ export const firebaseConfig={
     MyApp,
     ChatPage,
     RegistroPage,
-    SigninPage
+    SigninPage,
+    HistoricoPage,
+    HistoricoDetalhesPage
   ],
   providers: [
     StatusBar,

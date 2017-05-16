@@ -1,3 +1,4 @@
+import { HistoricoPage } from './../pages/historico/historico';
 import { ChatPage } from './../pages/chat/chat';
 import { AutenticacaoService } from './../services/autenticacao.service';
 import { RegistroPage } from './../pages/registro/registro';
@@ -17,6 +18,7 @@ export class MyApp {
   isAuthenticated: boolean;
   signinPage = SigninPage;
   registroPage = RegistroPage;
+  historicoPage = HistoricoPage;
   @ViewChild('nav') nav: NavController;
 
   constructor(@Inject(FirebaseApp) firebaseApp: any,

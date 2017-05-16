@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+        <button ion-button icon-only menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-buttons> 
+    <ion-title>Histórico Chat</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list inset>
+    <button ion-item *ngFor="let item of relatorioDiario" (click)="seleciona(item)">
+      {{ item.data}}
+    </button>
+  </ion-list>
+</ion-content>
